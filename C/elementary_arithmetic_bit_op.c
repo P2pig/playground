@@ -20,9 +20,15 @@ int add(int a, int b) {
     add(a^b, (a&b)<<1);
 }
 
+int minus(int a, int b) {
+    add(a,-b);
+}
+
 int main() {
 
     printf("100 + 100 = %d\n", add(100,100));
+    printf("5 - 3 = %d\n", minus(5,3));
 
     return 0;
 }
+
