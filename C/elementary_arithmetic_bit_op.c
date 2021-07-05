@@ -37,12 +37,30 @@ unsigned int multiply(unsigned int a, unsigned int b) {
     return t;
 }
 
+int divide(int a, int b) {
+    int tmp=1, ret=0;
+    while(b<=a) { //MSB
+        b<<=1;
+        tmp<<=1;
+    }
+    while(tmp > 1) {
+        b   >>= 1;
+        tmp >>= 1;
+
+        if(a >= b) {
+            a = minus(a,b);
+            ret = add(ret, tmp);
+        }
+    }
+    return ret;
+}
 
 int main() {
 
     printf("100 + 100 = %d\n", add(100,100));
     printf("5 - 3 = %d\n", minus(5,3));
     printf("5 * -5 = %d\n", multiply(5,-5)); 
+    printf("32 / 2 = %d\n", divide(32,2));
 
     return 0;
 }
