@@ -1,5 +1,4 @@
 /*
- * 介紹dangling else, 
  * 使用Macro技巧：_Generic, concatenate operator
  *
  * 來源： 你所不知道的 C 語言： 前置處理器應用篇
@@ -8,8 +7,8 @@
 #include <stdio.h>
 
 #define PRINT_CONCAT(VALUE, TYPE)    \
-         do {                     \
-             print_ ## TYPE(VALUE);\
+         do {                        \
+             print_ ## TYPE(VALUE);  \
          } while(0)
 
 #define PRINT_GENERIC(VALUE)    \
