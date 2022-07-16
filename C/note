@@ -1,0 +1,37 @@
+局部变量：
+	函数内部的变量都為'局部变量',作用于函数内部本身. 
+	未初始直為乱数. 地址不固定
+
+全局变量：
+	所有函数外部定义的变量為'全局变量',作用于原文件的所有函数,
+	初始直為0,固定地址.
+
+静态变量：
+	只执行一次, 全局变量也為静态变量, 局部变量前加上static為静态变量.
+	执行中地址固定
+
+
+fopen: r, r+, w, w+, a, a+
+r:  read only
+r+: read and write
+w:  write only(overwrite file)
+w+: read and write(overwrite file) 
+a:  append data to end of the file
+a+: append data and read 
+
+进程：执行中的程式為进程
+线程：线程為作业系统调度排程的最小单位, 一个进程至少有1个线程（main)
+
+中断是什么：中断是cpu接收到外部硬体或软体的信号，提醒cpu发生某事件应该备注意
+中断过程中：
+	暂停目前process执行并保存目前执行的状态, 
+	根据interupt id查询vecter table获取ISR地址
+	处理ISR(interupt service routine)
+	执行完成,还原先前process执行状态
+	活到原先的执行
+
+暂行目前执行的process,保存目前的状态
+根据interupt ID查询vector table找出ISR初始地址
+执行ISR(interupt server routine)
+完成ISR
+恢复process原先的状态
